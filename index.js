@@ -29,15 +29,17 @@ const campus = {
 
 // 2.3 Связать объекты между собой. т.е. прописать данные об факультете и кафедре для студента
 student.campus = campus;
-console.log(student);
+// console.log(student);
+
 // 2.4 Реализовать функцию выводит на экран всю информацию о студенте
 
 function studentinfo(student) {
-  for (const [key, value] of Object.entries(student)) {
-    console.log(`${key}: ${value}`);
-  }
+  // for (const [key, value] of Object.entries(student)) {
+  //   console.log(`${key}: ${value}`);
+  // }
+  return `${student.name} ${student.surName} ${student.isMale} ${student.telephone} ${student.campus.faculty} ${student.campus.department}`
 }
-// studentinfo(student);
+// console.log(studentinfo(student));
 
 
 // 3.1 Создать числовой массив и проинициализировать его из 25 элементов.
@@ -101,12 +103,88 @@ function arrayEvenValue() {
 function valueArray() {
   let arr = [0, 1, 2, 3, 0, 4, 5];
   let newAr = [];
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     let value = arr[i];
-    if(value === 0) {
+    if (value === 0) {
       newAr.push(i);
     }
   }
   return newAr;
 }
-console.log(valueArray());
+// console.log(valueArray());
+
+
+// 3.5 Подсчитать количество нулевых элементов
+
+
+function countValue() {
+  let arr = [0, 1, 2, 3, 0, 4, 5];
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      result++;
+    }
+  }
+  return result;
+}
+
+// console.log(countValue());
+
+
+
+// 4 Создать классы:
+// - Книга (автор, название, год издания, издательство)
+// - Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)
+
+
+class Book {
+  constructor(author, name, year, publishingCompany) {
+    this.author = author;
+    this.name = name;
+    this.year = year;
+    this.publishingCompany = publishingCompany
+  }
+}
+
+class Ebook extends Book {
+  constructor(author, name, year, publishingCompany, format, eNumber) {
+    super(author, name, year, publishingCompany)
+    this.format = format;
+    this.eNumber = eNumber;
+  }
+}
+
+const book = new Ebook('S', 'A', 9, 'U', 'P', 1);
+// console.log(book);
+
+
+
+
+
+
+
+
+
+
+
+// 5 Требуется написать функцию, выводящую в консоль числа от 1 до n, где n — это целое число, которая функция принимает в качестве параметра, с такими условиями:
+// вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
+// вывод fizz вместо чисел, кратных 3;
+// вывод buzz вместо чисел, кратных 5;
+
+function number(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz');
+    }
+    if (i % 3 === 0) {
+      console.log('fizz')
+    }
+    if (i % 5 === 0) {
+      console.log('buzz')
+    }
+    console.log(i)
+  }
+}
+
+// number(15);
