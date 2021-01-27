@@ -50,6 +50,9 @@ function initArray() {
   }
   return array;
 }
+// let array = new Array(25).fill(1);
+//   console.log(array)
+
 // console.log(initArray());
 
 
@@ -62,6 +65,10 @@ function initArrayRandom() {
   }
   return arrayRandom;
 }
+
+// const arr = new Array(25).fill().map(() => Math.random());
+// console.log(arr);
+
 // console.log(initArrayRandom());
 
 
