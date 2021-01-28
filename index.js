@@ -180,18 +180,23 @@ const book = new Ebook('S', 'A', 9, 'U', 'P', 1);
 // вывод buzz вместо чисел, кратных 5;
 
 function number(n) {
+  let arr = [];
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
-      console.log('fizzbuzz');
+      arr.push('fizzbuzz');
+      continue;
     }
     if (i % 3 === 0) {
-      console.log('fizz')
+      arr.push('fizz');
+      continue;
     }
     if (i % 5 === 0) {
-      console.log('buzz')
+      arr.push('buzz');
+      continue;
     }
-    console.log(i)
+    arr.push(i)
   }
+  return arr;
 }
 
-// number(15);
+number(15);
